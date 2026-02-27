@@ -32,7 +32,6 @@ export async function POST(req: Request) {
                     experience_years: parsed.experience_years,
                     full_text: parsed.text,
                     keywords: parsed.keywords,
-                    updated_at: new Date().toISOString(),
                 });
 
                 results.push({ filename: file.name, status: "success" });
