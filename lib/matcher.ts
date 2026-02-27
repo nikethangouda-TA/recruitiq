@@ -116,9 +116,9 @@ function basicScore(jobDesc: string, candidates: ResumeRecord[]): MatchResult[] 
         );
 
         let matchCount = 0;
-        for (const word of jobWords) {
+        Array.from(jobWords).forEach(word => {
             if (resumeWords.has(word)) matchCount++;
-        }
+        });
 
         const score = Math.min(100, Math.round((matchCount / Math.max(jobWords.size, 1)) * 100));
 
